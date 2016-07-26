@@ -1,0 +1,26 @@
+.body-container
+  .table-responsive.col-sm-7
+    h2 Major scales
+    table.table.table-striped
+      thead
+        tr
+          - for i in 1..7 do
+            th = i
+      tbody
+        - @major_scales.each do |scale|
+          tr
+            - scale.each do |note|
+              td = note.note_string.chop
+
+  .table-responsive.col-sm-7
+    h2 Minor scales
+    table.table.table-striped
+      thead
+        tr
+          - for i in 1..7 do
+            th = i
+      tbody
+        - @minor_scales.each do |scale|
+          tr
+            - scale.each do |note|
+              td = note.note_string.chop
