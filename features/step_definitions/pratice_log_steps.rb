@@ -1,11 +1,14 @@
 Given(/^there are some entries$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @entries = create_list :practice_log, 5
 end
 
 When(/^I visit the practice log page$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @practice_log_page = PracticeLogPage.new
+  @practice_log_page.load
 end
 
 Then(/^I should see all of the entries$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  @entries.each do |entry|
+    expect(@practice_log_page).to show_practice_logs(entry)
+  end
 end

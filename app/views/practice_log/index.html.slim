@@ -3,15 +3,15 @@
     | Practice Log 
     small Keeping tabs (pun intented) on practice sessions
     
-.row
+.row.col-sm-12
   = link_to new_practice_log_path, class:"btn btn-success" do
     span.padded-right
       = "Add"
     span.glyphicon.glyphicon-plus
-br
+  hr
 
 .row.col-sm-6
   - @entries.each do |entry|
     .panel.panel-primary
-      .panel-heading = entry.date
+      .panel-heading = "#{entry.date} : #{entry.time_from.strftime("%H:%M")} - #{entry.time_to.strftime("%H:%M")}"
       .panel-body = entry.practiced

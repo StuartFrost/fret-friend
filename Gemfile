@@ -34,12 +34,18 @@ gem 'rake'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+group :test do                                                                                                                                                                                                                   
+	gem "database_cleaner"
+	gem "shoulda-matchers"
+	gem "site_prism"
+end
+
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-  gem 'cucumber-rails', :require => false
-  gem 'rspec-rails'
-  gem 'database_cleaner'
+	gem "cucumber-rails", require: false
+	gem "factory_girl_rails"
+	gem "faker"
+	gem "rspec-rails"
+  gem "byebug"
 end
 
 group :development do
