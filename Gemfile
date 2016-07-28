@@ -24,6 +24,7 @@ gem 'bootstrap-sass'
 gem 'slim-rails'
 gem 'music'
 gem 'rake'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
