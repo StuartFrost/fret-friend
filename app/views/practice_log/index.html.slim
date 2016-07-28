@@ -1,0 +1,24 @@
+.page-header
+  h2
+    | Practice Log 
+    small Keeping tabs (pun intented) on practice sessions
+    
+.row.col-sm-12
+  = link_to new_practice_log_path, class:"btn btn-success" do
+    span.padded-right
+      = "Add"
+    span.glyphicon.glyphicon-plus
+.br
+
+.row.col-sm-6
+  - @entries.each do |entry|
+    .panel.panel-primary
+      .panel-heading
+        h3.panel-title.pull-left
+        | #{entry.date} : #{entry.time_from.strftime("%H:%M")} - #{entry.time_to.strftime("%H:%M")}
+        = link_to "Delete", practice_log_path(entry), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm pull-right"
+        = link_to "Edit", edit_practice_log_path(entry), class: "btn btn-success btn-sm pull-right margin-right"
+        .clearfix
+      / .panel-heading = "#{entry.date} : #{entry.time_from.strftime("%H:%M")} - #{entry.time_to.strftime("%H:%M")}"
+      / = link_to "Edit", edit_practice_log_path(entry), class: "btn btn-warning"
+      .panel-body = entry.practiced
