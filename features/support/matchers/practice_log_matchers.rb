@@ -2,8 +2,7 @@ require "rspec/expectations"
 
 module PracticeLogMatchers
   def show_practice_logs entry
-		have_practice_log_date(entry)
-      .and have_practice_log_practiced(entry)
+      have_practice_log_practiced(entry)
   end
 
 	%i(date time_from time_to practiced).each do |field|
