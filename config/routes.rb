@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
     root 'home#index'
     resources :tools
-    resources :practice_log
+    get 'practice_log/all' => 'practice_log#all'
+    resources :practice_log, only: [:index, :new, :create, :edit, :update, :destroy]
   # get 'scales', :to => 'home#tools'
 
   # Example of regular route:
