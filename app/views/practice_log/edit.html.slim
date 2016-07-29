@@ -1,16 +1,17 @@
-.row
-  fieldset
-  legend Edit an entry
-  = simple_form_for @entry do |f|
-    .row                                                                                                                                                                                                                           
-      .col-md-12
-        = f.input :date, required: true
-      .col-md-12
-        = f.input :time_from, required: true
-      .col-md-12
-        = f.input :time_to, required: true
-      .col-md-12
-        = f.input :practiced, required: true
-    .btn-toolbar
-      = f.button :submit, "Submit", class: "btn btn-success pull-right"
-      = link_to "Cancel", practice_log_index_path, class: "btn btn-danger"
+.padded
+  .row
+    fieldset
+    legend Edit an entry
+    = simple_form_for @entry do |f|
+      .row                                                                                                                                                                                                                           
+        .col-md-12
+          = f.input :date, required: true
+        .col-md-12
+          = f.input :time_from, required: true
+        .col-md-12
+          = f.input :time_to, required: true
+        .col-md-12
+          = f.input :practiced, required: true
+      .btn-toolbar
+        = f.button :submit, "Submit", class: "btn btn-success pull-right"
+        = link_to "Cancel", practice_log_index_path, class: "btn btn-danger"
