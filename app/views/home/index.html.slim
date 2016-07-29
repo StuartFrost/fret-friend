@@ -1,0 +1,4 @@
+.panel.panel-primary
+  .panel-heading.text-center 
+    h3 = "Hours practiced this week (#{format_date ApplicationHelper.start_of_week, false} - #{format_date ApplicationHelper.end_of_week, false})"
+  h1.panel-body.text-center = @hours_practiced
