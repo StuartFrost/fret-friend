@@ -37,5 +37,5 @@ Then(/^I should see the new entry$/) do
 end
 
 Then(/^the entry is deleted$/) do
-   expect { @entry.reload }.to raise_exception(ActiveRecord::RecordNotFound) 
+  expect { @entry.reload }.to raise_exception(ActiveRecord::RecordNotFound) 
 end
