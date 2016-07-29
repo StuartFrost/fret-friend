@@ -1,6 +1,11 @@
 class PracticeLogController < ApplicationController
   def index
-    @entries = PracticeLog.all
+    @entries = PracticeLog.where(date: 1.week.ago..Date.today).order(date: :desc)
+  end
+
+  def all
+    @entries = PracticeLog.all.order(date: :desc)
+    render "index"
   end
 
   def new
@@ -10,10 +15,6 @@ class PracticeLogController < ApplicationController
   def create
     @entry = PracticeLog.new(log_params)
     @entry.save ? create_success : create_fail
-  end
-
-  def show
-    @entry = PracticeLog.find(params[:id])
   end
 
   def edit
