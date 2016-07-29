@@ -16,7 +16,7 @@
     .panel.panel-primary
       .panel-heading
         h3.panel-title.pull-left
-        | #{entry.date} : #{entry.time_from.strftime("%H:%M")} - #{entry.time_to.strftime("%H:%M")}
+        | #{format_date(entry.date, true)} : #{format_time entry.time_from} - #{format_time entry.time_to}
         = link_to "Delete", practice_log_path(entry), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-sm pull-right"
         = link_to "Edit", edit_practice_log_path(entry), class: "btn btn-success btn-sm pull-right margin-right"
         .clearfix
