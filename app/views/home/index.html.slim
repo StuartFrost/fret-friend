@@ -3,10 +3,10 @@
     .panel.panel-primary
       .panel-heading.text-center
         h3 = "Hours practiced this week (#{format_date(ApplicationHelper.start_of_week(Date.today), false)} - #{format_date(ApplicationHelper.end_of_week(Date.today), false)})"
-      h1.panel-body.text-center = @stats_facade.hours_practiced(@stats_facade.this_week)
+      h1.panel-body.text-center = @stats_facade.hours_practiced Date.today
 
   .col-md-6
     .panel.panel-primary
       .panel-heading.text-center
         h3 = "Hours practiced last week (#{format_date(ApplicationHelper.start_of_week(1.week.ago), false)} - #{format_date(ApplicationHelper.end_of_week(1.week.ago), false)})"
-      h1.panel-body.text-center = @stats_facade.hours_practiced(@stats_facade.last_week)
+      h1.panel-body.text-center = @stats_facade.hours_practiced 1.week.ago
