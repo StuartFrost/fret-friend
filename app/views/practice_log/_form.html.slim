@@ -1,9 +1,9 @@
 .row                                                                                                                                                                                                                           
   .col-md-12
-    = form.input :date, as: :string, required: true, input_html: {value: form.object.date || format_date(Time.now, false)} 
+    = form.input :date, as: :string, required: true, input_html: {value: form.object.date || Time.now.strftime("%Y-%m-%d")} 
   .col-md-12
     = form.input :time_from, required: true, minute_step: 5
   .col-md-12
-    = form.input :time_to, required: true
+    = form.input :time_to, required: true, minute_step: 5
   .col-md-12
     = form.input :practiced, required: true
