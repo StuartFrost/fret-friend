@@ -1,0 +1,14 @@
+.page-header
+  h2 Settings
+
+.col-md-4
+  table.table.table-bordered
+    thead
+      tr
+        th Setting
+        th Actions
+    tbody
+      - @settings.each_key do |setting|
+        tr
+          td = setting
+          td = link_to "Edit", edit_setting_path(setting)

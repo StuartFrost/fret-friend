@@ -1,0 +1,6 @@
+.padded
+  .row
+    legend Edit practice time target
+    = simple_form_for @setting, url: setting_path(@setting.var), method: 'patch' do |f|
+      = f.input :value, as: :numeric
+      = f.button :submit, "Submit", class: "btn btn-success pull-right"

@@ -12,9 +12,11 @@ nav.navbar.navbar-inverse role="navigation"
     #default-navbar.collapse.navbar-collapse
       ul.nav.navbar-nav
         li
-          a href="/practice_log" Practice Log
+          = link_to "Practice Log", practice_log_index_path
         li
-          a href="/tools" Tools
+          = link_to "Tools", tools_path
+        li
+          = link_to "Settings", settings_path
       / form.navbar-form.navbar-left role="search" 
         .form-group
           input.form-control placeholder="Search" type="text" 
