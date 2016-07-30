@@ -18,6 +18,6 @@ class StatsFacade
     logs_from_week.each do |log|
       result += ((log.time_to - log.time_from) / 1.hour) 
     end
-    result
+    result.round(1)
   end
 end
