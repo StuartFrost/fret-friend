@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :tools
     get 'practice_log/all' => 'practice_log#all'
     resources :practice_log, only: [:index, :new, :create, :edit, :update, :destroy]
+    resources :settings, only: [:index,:edit, :update]
   # get 'scales', :to => 'home#tools'
 
   # Example of regular route:

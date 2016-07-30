@@ -25,6 +25,7 @@ gem 'slim-rails'
 gem 'music'
 gem 'rake'
 gem 'simple_form'
+gem 'rails-settings-cached'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

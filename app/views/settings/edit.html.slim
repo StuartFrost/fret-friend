@@ -1,0 +1,6 @@
+.padded
+  .row
+    legend Edit target practice hours per week
+    = simple_form_for @setting, url: setting_path(@setting.var), method: 'patch' do |f|
+      = f.input :value, as: :integer
+      = f.button :submit, "Submit", class: "btn btn-success pull-right"
