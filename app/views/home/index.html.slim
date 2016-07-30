@@ -1,12 +1,14 @@
 .row
   .col-md-6
-    .panel.panel-primary
+    - hours_practiced_this_week = @stats_facade.hours_practiced Date.today 
+    div class=((hours_practiced_this_week < Setting.practice_target.to_i) ? 'panel panel-danger' : 'panel panel-success')
       .panel-heading.text-center
         h3 = "Hours practiced this week (#{format_date(ApplicationHelper.start_of_week(Date.today), false)} - #{format_date(ApplicationHelper.end_of_week(Date.today), false)})"
-      h1.panel-body.text-center = @stats_facade.hours_practiced Date.today
+      h1.panel-body.text-center = hours_practiced_this_week
 
   .col-md-6
-    .panel.panel-primary
+    - hours_practiced_last_week = @stats_facade.hours_practiced 1.week.ago
+    div class=((hours_practiced_last_week < Setting.practice_target.to_i) ? 'panel panel-danger' : 'panel panel-success')
       .panel-heading.text-center
         h3 = "Hours practiced last week (#{format_date(ApplicationHelper.start_of_week(1.week.ago), false)} - #{format_date(ApplicationHelper.end_of_week(1.week.ago), false)})"
-      h1.panel-body.text-center = @stats_facade.hours_practiced 1.week.ago
+      h1.panel-body.text-center = hours_practiced_last_week
