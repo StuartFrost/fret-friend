@@ -6,7 +6,7 @@ class StatsFacade
   end
 
   def hours_practiced date
-    logs_from_week = @logs.where(date: date.at_beginning_of_week..date.at_end_of_week)
+    logs_from_week = @logs.where(date: (date.at_beginning_of_week - 1.day)..date.at_end_of_week)
     result = 0
 
     logs_from_week.each do |log|
