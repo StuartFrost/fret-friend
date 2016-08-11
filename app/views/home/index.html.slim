@@ -8,7 +8,7 @@
       h1.panel-body.text-center = "#{hours_practiced_this_week} / #{practice_target}"
 
   .col-md-6
-    - hours_practiced_last_week = @stats_facade.hours_practiced 1.week.ago
+    - hours_practiced_last_week = @stats_facade.hours_practiced (Date.today - 1.week)
     div class=((hours_practiced_last_week < practice_target) ? 'panel panel-danger' : 'panel panel-success')
       .panel-heading.text-center
         h3 = "Hours practiced last week (#{format_date(1.week.ago.at_beginning_of_week, false)} - #{format_date(1.week.ago.at_end_of_week, false)})"
