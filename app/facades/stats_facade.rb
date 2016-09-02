@@ -15,10 +15,13 @@ class StatsFacade
     result.round(1)
   end
 
-  def hours_practiced_per_day date_from
+  def hours_practiced_per_week date_from
     result = {}
-    @logs.each do |log|
-      result.store(log.date, ((log.time_to - log.time_from) / 1.hour))
+    to = Date.today
+    
+    while(date_from <= to)
+      result.store(date_from.at_beginning_of_week, hours_practiced(date_from))
+      date_from += 1.week
     end
     result
   end
