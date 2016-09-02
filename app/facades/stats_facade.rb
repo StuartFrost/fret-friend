@@ -10,8 +10,16 @@ class StatsFacade
     result = 0
 
     logs_from_week.each do |log|
-      result += ((log.time_to - log.time_from) / 1.hour) 
+      result += ((log.time_to - log.time_from) / 1.hour)
     end
     result.round(1)
+  end
+
+  def hours_practiced_per_day date_from
+    result = {}
+    @logs.each do |log|
+      result.store(log.date, ((log.time_to - log.time_from) / 1.hour))
+    end
+    result
   end
 end

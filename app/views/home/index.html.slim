@@ -13,3 +13,6 @@
       .panel-heading.text-center
         h3 = "Hours practiced last week (#{format_date(1.week.ago.at_beginning_of_week, false)} - #{format_date(1.week.ago.at_end_of_week, false)})"
       h1.panel-body.text-center = "#{hours_practiced_last_week} / #{practice_target}"
+
+.row
+  = line_chart @stats_facade.hours_practiced_per_day(3.months.ago)
