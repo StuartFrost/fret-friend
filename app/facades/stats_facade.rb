@@ -25,4 +25,30 @@ class StatsFacade
     end
     result
   end
+
+  def recently_practiced
+    result = {}
+    practiced = practiced_list
+
+    practiced.each do |item|
+      if result.key?(item)
+        result[item] += 1
+      else
+        result.store(item, 1)
+      end
+    end
+    result
+  end
+
+  private
+  def practiced_list
+    practiced = []
+    @logs.each do |log|
+      practice_items = log.practiced.split(".")
+      practice_items.each do |item|
+        practiced << item.strip
+      end
+    end
+    practiced
+  end
 end
