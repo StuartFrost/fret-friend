@@ -17,3 +17,17 @@
 .row
   .container
     = line_chart @stats_facade.hours_practiced_per_week(Date.today - 3.months), discrete: true, xtitle: "Week commencing", ytitle: "Hours practiced"
+
+hr
+.row
+  .col-md-6
+    h3 Most practiced
+    table.table.table-condensed.table-striped
+      thead
+        th Practiced
+        th No. times
+      tbody
+        - @stats_facade.recently_practiced.each do |key, value|
+          tr
+            td = key
+            td = value
