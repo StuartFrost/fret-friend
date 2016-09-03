@@ -17,9 +17,8 @@ class StatsFacade
 
   def hours_practiced_per_week date_from
     result = {}
-    to = Date.today
     
-    while(date_from <= to)
+    while(date_from <= Date.today)
       result.store(date_from.at_beginning_of_week, hours_practiced(date_from))
       date_from += 1.week
     end
@@ -37,7 +36,7 @@ class StatsFacade
         result.store(item, 1)
       end
     end
-    result
+    result.sort_by{|key, value| value}.reverse[0..4].to_h
   end
 
   private
