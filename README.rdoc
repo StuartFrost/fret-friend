@@ -1,6 +1,6 @@
 == FretFriend README
 
-This is a multi-purpose application for keeping tabs (pun intended) of guitar practice sessions. Features so far include: Toolkit containing major/minor scales & other useful aids, practice log.
+This is a multi-purpose application for keeping tabs (pun intended) of guitar practice sessions. Features so far include: Toolkit containing major/minor scales, practice log, dashboard showing amount of hours practiced recently.
 
 * Ruby version
   2.3

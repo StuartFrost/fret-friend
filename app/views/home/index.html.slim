@@ -15,4 +15,5 @@
       h1.panel-body.text-center = "#{hours_practiced_last_week} / #{practice_target}"
 
 .row
-  = line_chart @stats_facade.hours_practiced_per_week(Date.today - 3.months)
+  .container
+    = line_chart @stats_facade.hours_practiced_per_week(Date.today - 3.months), discrete: true, xtitle: "Week commencing", ytitle: "Hours practiced"
